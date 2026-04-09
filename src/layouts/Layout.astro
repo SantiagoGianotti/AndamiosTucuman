@@ -18,7 +18,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="es-AR" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#1a5fb4" />
 
     <!-- SEO -->
     <title>{title}</title>
@@ -31,42 +33,126 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:locale" content="es_AR" />
-    <meta property="og:site_name" content="Andamios Tucumán" />
+    <meta property="og:site_name" content="Tucumán Andamios y Equipos" />
+    <meta property="og:image" content="https://andamiostucuman.com/images/og-image.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://andamiostucuman.com/images/og-image.jpeg" />
 
     <!-- Geo -->
     <meta name="geo.region" content="AR-T" />
-    <meta name="geo.placename" content="San Miguel de Tucumán" />
+    <meta name="geo.placename" content="Yerba Buena, Tucumán" />
 
     <!-- Structured Data: LocalBusiness -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Andamios Tucumán",
-      "description": "Alquiler de andamios y equipos para construcción en Tucumán, Argentina.",
+      "name": "Tucumán Andamios y Equipos",
+      "description": "Alquiler de andamios, maquinaria y servicios integrales para obras y construcción en Tucumán. Maquinaria propia, materiales y personal capacitado.",
       "url": "https://andamiostucuman.com",
-      "telephone": "+54-9-3816-93-8388",
+      "telephone": "+54 9 3816 93-8388",
+      "email": "contacto@andamiostucuman.com",
+      "image": "https://andamiostucuman.com/images/logo-tucuman-andamios-v1.jpeg",
+      "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "San Miguel de Tucumán",
+        "addressLocality": "Yerba Buena",
         "addressRegion": "Tucumán",
         "addressCountry": "AR"
       },
-      "areaServed": {
-        "@type": "State",
-        "name": "Tucumán"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -26.8167,
+        "longitude": -65.2833
       },
-      "serviceType": ["Alquiler de andamios", "Alquiler de equipos para construcción"]
+      "areaServed": [
+        { "@type": "City", "name": "San Miguel de Tucumán" },
+        { "@type": "City", "name": "Yerba Buena" },
+        { "@type": "City", "name": "Banda del Río Salí" },
+        { "@type": "City", "name": "Tafí Viejo" },
+        { "@type": "City", "name": "Las Talitas" },
+        { "@type": "City", "name": "Concepción" }
+      ],
+      "sameAs": ["https://www.instagram.com/tucuman.andamios/"],
+      "serviceType": [
+        "Alquiler de andamios",
+        "Alquiler de maquinaria para construcción",
+        "Reparación de calles",
+        "Movimiento de suelo",
+        "Compactación de terrenos",
+        "Albañilería y mantenimiento",
+        "Servicios eléctricos y alumbrado"
+      ]
+    })} />
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta alquilar un andamio en Tucumán?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El costo varía según el tipo de andamio, la altura requerida y la duración del alquiler. Ofrecemos presupuestos personalizados sin compromiso. Contactanos por WhatsApp para una cotización rápida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué incluye el servicio de alquiler de andamios?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nuestro servicio incluye la entrega y retiro en obra del equipamiento. Contamos con andamios tubulares, de aluminio, tijeras elevadoras y más. Todo el equipo cuenta con mantenimiento al día."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En qué zonas de Tucumán trabajan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cubrimos toda la provincia de Tucumán: San Miguel de Tucumán, Yerba Buena, Banda del Río Salí, Tafí Viejo, Las Talitas, Concepción y alrededores."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto demoran en entregar el equipo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contamos con disponibilidad inmediata y maquinaria propia. En la mayoría de los casos podemos entregar en el día o dentro de las 24 horas."
+          }
+        }
+      ]
     })} />
 
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
   </head>
   <body class="bg-white text-gray-800 font-sans antialiased">
     <slot />
+
+    <!-- Scroll reveal observer -->
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
   </body>
 </html>
