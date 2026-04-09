@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andamiostucuman.com/sitemap-index.xml

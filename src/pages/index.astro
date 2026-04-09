@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const whatsappNumber = '5493816938388';
+const whatsappMessage = encodeURIComponent('Hola! Me interesa consultar por el alquiler de andamios.');
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+const phone = '+54 9 3816 93-8388';
+const email = 'contacto@andamiostucuman.com';
+
+const services = [
+  {
+    title: 'Andamios Tubulares',
+    description: 'Estructura robusta y versátil, ideal para obras de gran envergadura. Fácil montaje y máxima seguridad.',
+    icon: '🏗️',
+  },
+  {
+    title: 'Andamios Multidireccionales',
+    description: 'Sistema modular que se adapta a cualquier geometría. Perfecto para fachadas irregulares y trabajos complejos.',
+    icon: '🔧',
+  },
+  {
+    title: 'Torres de Andamios',
+    description: 'Solución móvil para trabajos en altura. Ideales para mantenimiento, pintura e instalaciones.',
+    icon: '🏢',
+  },
+  {
+    title: 'Puntales y Accesorios',
+    description: 'Complementos esenciales para tus obras: puntales metálicos, tablones, redes de seguridad y más.',
+    icon: '⚙️',
+  },
+];
+---
+
+<Layout
+  title="Andamios Tucumán | Alquiler de Andamios y Equipos para Construcción"
+  description="Alquiler de andamios tubulares, multidireccionales y equipos para construcción en Tucumán. Entrega rápida, precios competitivos y asesoramiento profesional."
+>
+  <!-- Header / Nav -->
+  <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold text-amber-600">
+        Andamios Tucumán
+      </a>
+      <div class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="#inicio" class="hover:text-amber-600 transition-colors">Inicio</a>
+        <a href="#servicios" class="hover:text-amber-600 transition-colors">Servicios</a>
+        <a href="#nosotros" class="hover:text-amber-600 transition-colors">Nosotros</a>
+        <a href="#contacto" class="hover:text-amber-600 transition-colors">Contacto</a>
+      </div>
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+      >
+        WhatsApp
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900 text-white">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+          Alquiler de Andamios<br />
+          <span class="text-amber-400">en Tucumán</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+          Equipamiento seguro y confiable para tu obra. Entrega rápida, asesoramiento profesional y los mejores precios de la provincia.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+          >
+            Pedir Presupuesto
+          </a>
+          <a
+            href="#servicios"
+            class="border-2 border-white/30 hover:border-white/60 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+          >
+            Ver Servicios
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="servicios" class="py-20 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Nuestros Servicios</h2>
+        <p class="text-gray-600 text-center max-w-xl mx-auto mb-12">
+          Ofrecemos soluciones completas en andamios y equipos para construcción, adaptándonos a las necesidades de cada proyecto.
+        </p>
+        <div class="grid md:grid-cols-2 gap-8">
+          {services.map((service) => (
+            <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <span class="text-4xl mb-4 block">{service.icon}</span>
+              <h3 class="text-xl font-bold mb-2">{service.title}</h3>
+              <p class="text-gray-600">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="nosotros" class="py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Por qué elegirnos?</h2>
+          <p class="text-gray-600 text-lg mb-12">
+            Somos una empresa tucumana dedicada al alquiler de andamios y equipos para la construcción. Trabajamos con compromiso, seguridad y puntualidad para que tu obra avance sin contratiempos.
+          </p>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="text-4xl font-extrabold text-amber-600 mb-2">100+</div>
+            <p class="text-gray-600 font-medium">Obras acompañadas</p>
+          </div>
+          <div>
+            <div class="text-4xl font-extrabold text-amber-600 mb-2">24hs</div>
+            <p class="text-gray-600 font-medium">Entrega rápida</p>
+          </div>
+          <div>
+            <div class="text-4xl font-extrabold text-amber-600 mb-2">Tucumán</div>
+            <p class="text-gray-600 font-medium">Cobertura provincial</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto" class="py-20 bg-gray-900 text-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Contactanos</h2>
+        <p class="text-gray-400 text-center max-w-xl mx-auto mb-12">
+          Pedí tu presupuesto sin compromiso. Respondemos rápido por WhatsApp o podés llamarnos directamente.
+        </p>
+        <div class="grid sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center gap-3 bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition-colors"
+          >
+            <svg class="w-8 h-8 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span class="font-semibold">WhatsApp</span>
+          </a>
+          <a
+            href={`tel:${phone.replace(/\s/g, '')}`}
+            class="flex flex-col items-center gap-3 bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition-colors"
+          >
+            <svg class="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span class="font-semibold">Llamanos</span>
+            <span class="text-sm text-gray-400">{phone}</span>
+          </a>
+          <a
+            href={`mailto:${email}`}
+            class="flex flex-col items-center gap-3 bg-gray-800 rounded-2xl p-8 hover:bg-gray-700 transition-colors"
+          >
+            <svg class="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span class="font-semibold">Email</span>
+            <span class="text-sm text-gray-400">{email}</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 text-gray-500 text-sm py-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p>&copy; {new Date().getFullYear()} Andamios Tucumán. Todos los derechos reservados.</p>
+      <p class="mt-1">San Miguel de Tucumán, Argentina</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a
+    href={whatsappLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all z-50"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</Layout>
