@@ -57,11 +57,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       "description": "Alquiler de andamios, maquinaria y servicios integrales para obras y construcción en Tucumán. Maquinaria propia, materiales y personal capacitado.",
       "url": "https://andamiostucuman.com.ar",
       "telephone": "+54 9 3816 93-8388",
-      "email": "contacto@andamiostucuman.com.ar",
       "image": "https://andamiostucuman.com.ar/images/logo-tucuman-andamios-v1.jpeg",
       "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "21:00"
+      },
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Guyanas 401",
         "addressLocality": "Yerba Buena",
         "addressRegion": "Tucumán",
         "addressCountry": "AR"
