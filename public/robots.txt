@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://andamiostucuman.com.ar/sitemap-index.xml
+Sitemap: https://tucumanandamios.com.ar/sitemap-index.xml

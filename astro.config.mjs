@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://andamiostucuman.com.ar',
+  site: 'https://tucumanandamios.com.ar',
   vite: {
     plugins: [tailwindcss()]
   },
