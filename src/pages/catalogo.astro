@@ -1,0 +1,351 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const whatsappNumber = '5493816938388';
+const whatsappBase = `https://wa.me/${whatsappNumber}`;
+const phone = '+54 9 3816 93-8388';
+
+const categorias = [
+  {
+    name: 'Compactación de Bases',
+    slug: 'compactacion',
+    intro: 'Compactación firme y pareja para bases de veredas, contrapisos, cimientos y terraplenes.',
+    equipos: [
+      {
+        nombre: 'Placa Vibratoria Chancha',
+        img: '/images/compactadora-placa-alquiler-tucuman.jpeg',
+        alt: 'Alquiler de placa vibratoria chancha en Tucumán',
+        desc: 'Compactadora a nafta de alta frecuencia para compactar bases de suelos y gravilla. Dejá tu base lista para contrapisos, veredas o adoquinado con acabado parejo y firme.',
+      },
+      {
+        nombre: 'Canguro Pisonador',
+        img: '/images/compactador-pata-cabra-obra-tucuman.jpeg',
+        alt: 'Alquiler de canguro pisonador en Tucumán',
+        desc: 'Pisón percutor para compactar bases en zanjas angostas y espacios reducidos. Perfecto para rellenos alrededor de cañerías, cimientos y trabajos donde la placa no entra.',
+      },
+    ],
+  },
+  {
+    name: 'Demolición y Corte',
+    slug: 'demolicion',
+    intro: 'Potencia controlada para intervenir hormigón, mampostería y pavimentos.',
+    equipos: [
+      {
+        nombre: 'Martillo Demoledor',
+        img: '/images/martillo-demoledor-alquiler-tucuman.jpeg',
+        alt: 'Alquiler de martillo demoledor en Tucumán',
+        desc: 'Martillo eléctrico de alto impacto para romper hormigón, mampostería y pavimento. Apurás demoliciones y aperturas de canaletas sin depender de un compresor.',
+      },
+      {
+        nombre: 'Cortadora de Hormigón',
+        img: '/images/cortadora-hormigon-alquiler-tucuman.jpeg',
+        alt: 'Alquiler de cortadora de hormigón en Tucumán',
+        desc: 'Cortadora a nafta con disco diamantado y refrigeración por agua. Hacés cortes limpios en losas, pavimentos y veredas para juntas de dilatación o reparaciones.',
+      },
+      {
+        nombre: 'Amoladora',
+        img: '/images/amoladora-dewalt-alquiler-tucuman.jpeg',
+        alt: 'Alquiler de amoladora profesional en Tucumán',
+        desc: 'Amoladora profesional para cortar y desbastar metal, hormigón y cerámicos. Una herramienta versátil que no puede faltar en ninguna obra.',
+      },
+    ],
+  },
+  {
+    name: 'Hormigón',
+    slug: 'hormigon',
+    intro: 'Todo lo que necesitás para preparar, colocar y terminar hormigón en obra.',
+    equipos: [
+      {
+        nombre: 'Vibrador de Hormigón',
+        img: '/images/vibrador-hormigon-maquinaria-propia.jpeg',
+        alt: 'Alquiler de vibrador de hormigón en Tucumán',
+        desc: 'Vibrador de inmersión con chicote flexible que elimina burbujas de aire del hormigón fresco. Lográs columnas, vigas y losas más densas, resistentes y sin nidos de abeja.',
+      },
+      {
+        nombre: 'Allanadora Helicóptero',
+        img: '/images/allanadora-helicoptero-alquiler-tucuman.jpeg',
+        alt: 'Alquiler de allanadora helicóptero en Tucumán',
+        desc: 'Allanadora mecánica con aspas rotativas para terminación de pisos de hormigón. Conseguís superficies lisas, compactas y listas para uso industrial o comercial.',
+      },
+      {
+        nombre: 'Hormigonera',
+        img: '/images/hormigonera-alquiler-tucuman.jpeg',
+        alt: 'Alquiler de hormigonera en Tucumán',
+        desc: 'Hormigonera con tambor rotativo para preparar mezclas en obra. Ganás autonomía y mezclás la cantidad justa cuando la necesitás, sin depender del camión mixer.',
+      },
+      {
+        nombre: 'Revocadora',
+        img: '/images/revocadora-alquiler-tucuman.jpeg',
+        alt: 'Alquiler de revocadora en Tucumán',
+        desc: 'Máquina revocadora que proyecta mortero directo sobre el muro. Multiplicás el rendimiento de tu cuadrilla y terminás paredes en menos tiempo, con espesor parejo.',
+      },
+    ],
+  },
+  {
+    name: 'Trabajo en Altura',
+    slug: 'altura',
+    intro: 'Soluciones seguras para llegar alto sin complicarte la logística.',
+    equipos: [
+      {
+        nombre: 'Tijera Elevadora',
+        img: '/images/tijera-elevadora-haulotte-alquiler.jpeg',
+        alt: 'Alquiler de tijera elevadora en Tucumán',
+        desc: 'Elevador tipo tijera autopropulsado para trabajos seguros en altura. Ideal para montajes, mantenimiento, pintura y tareas donde el andamio no es práctico.',
+      },
+      {
+        nombre: 'Andamios',
+        img: '/images/andamio-naranja-obra-cancha-padel.jpeg',
+        alt: 'Alquiler de andamios tubulares y de aluminio en Tucumán',
+        desc: 'Andamios tubulares y de aluminio en distintas alturas, armado rápido y seguro. Contamos con stock suficiente para obras chicas, grandes y frentes múltiples en simultáneo.',
+      },
+      {
+        nombre: 'Escaleras Extensibles',
+        img: '/images/escalera-extensible-alquiler-tucuman.jpeg',
+        alt: 'Alquiler de escaleras extensibles en Tucumán',
+        desc: 'Escaleras de gran alcance para tareas puntuales en altura. Resolvés trabajos de fachada, instalación o mantenimiento sin necesidad de montar andamio completo.',
+      },
+    ],
+  },
+  {
+    name: 'Maquinaria Pesada',
+    slug: 'pesada',
+    intro: 'Movimiento de materiales y trabajos pesados con rendimiento garantizado.',
+    equipos: [
+      {
+        nombre: 'Minicargadora',
+        img: '/images/minicargadora-bobcat-alquiler-tucuman.jpeg',
+        alt: 'Alquiler de minicargadora Bobcat en Tucumán',
+        desc: 'Bobcat con pala frontal para mover tierra, escombros y materiales en espacios reducidos. Aumentás la productividad del obrador y reducís tiempos de carga y traslado interno.',
+      },
+      {
+        nombre: 'Autoelevador',
+        img: '/images/autoelevador-montacargas-alquiler.jpeg',
+        alt: 'Alquiler de autoelevador en Tucumán',
+        desc: 'Autoelevador de 2.5 toneladas para mover pallets, bolsones y cargas pesadas. Ágil en playa de obra, depósito o pañol, con operación cómoda y segura.',
+      },
+    ],
+  },
+  {
+    name: 'Limpieza',
+    slug: 'limpieza',
+    intro: 'Potencia industrial para dejar obras, pisos y maquinaria impecables.',
+    equipos: [
+      {
+        nombre: 'Hidrolavadora Industrial',
+        img: '/images/hidrolavadora-industrial-alquiler-tucuman.jpeg',
+        alt: 'Alquiler de hidrolavadora industrial en Tucumán',
+        desc: 'Hidrolavadora de alta presión con motor eléctrico y bomba profesional. Ideal para limpieza de obras, pisos, maquinaria y fachadas donde se necesita potencia real.',
+      },
+    ],
+  },
+];
+
+const totalEquipos = categorias.reduce((acc, c) => acc + c.equipos.length, 0);
+---
+
+<Layout
+  title="Catálogo de Equipos | Alquiler de Maquinaria en Tucumán"
+  description="Catálogo completo de equipos para alquiler en Tucumán: andamios, tijera elevadora, minicargadora, martillo demoledor, hormigoneras, compactadoras y más. Descargá el PDF o consultanos por WhatsApp."
+>
+  <!-- Header / Nav -->
+  <header id="site-header" class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+    <nav class="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <img src="/favicon.png" alt="Tucumán Andamios y Equipos - Logo" class="h-10 w-auto" />
+        <span class="hidden sm:inline text-lg font-bold text-slate-800 tracking-tight">Tucumán Andamios</span>
+      </a>
+
+      <div class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="/#inicio" class="hover:text-brand-blue transition-colors">Inicio</a>
+        <a href="/#servicios" class="hover:text-brand-blue transition-colors">Servicios</a>
+        <a href="/catalogo" class="text-brand-blue font-semibold">Catálogo</a>
+        <a href="/#trabajos" class="hover:text-brand-blue transition-colors">Trabajos</a>
+        <a href="/#contacto" class="hover:text-brand-blue transition-colors">Contacto</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a
+          href={`${whatsappBase}?text=${encodeURIComponent('Hola José! Necesito un presupuesto para alquiler de equipos.')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden md:inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm font-bold px-5 py-2 rounded-lg transition-colors"
+        >
+          WhatsApp
+        </a>
+        <button
+          id="menu-toggle"
+          class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+          aria-label="Abrir menú"
+        >
+          <span class="block w-6 h-0.5 bg-slate-800"></span>
+          <span class="block w-6 h-0.5 bg-slate-800"></span>
+          <span class="block w-6 h-0.5 bg-slate-800"></span>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+      <div class="flex flex-col px-4 py-2">
+        <a href="/#inicio" class="py-3 border-b border-gray-100 font-medium">Inicio</a>
+        <a href="/#servicios" class="py-3 border-b border-gray-100 font-medium">Servicios</a>
+        <a href="/catalogo" class="py-3 border-b border-gray-100 font-medium text-brand-blue">Catálogo</a>
+        <a href="/#trabajos" class="py-3 border-b border-gray-100 font-medium">Trabajos</a>
+        <a href="/#contacto" class="py-3 border-b border-gray-100 font-medium">Contacto</a>
+        <a
+          href={`${whatsappBase}?text=${encodeURIComponent('Hola José!')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-3 mb-2 bg-green-500 text-white text-center font-bold py-3 rounded-lg"
+        >
+          Contactar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative pt-28 pb-12 md:pt-36 md:pb-16 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-white overflow-hidden">
+      <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 50%, #eab308 0%, transparent 50%)"></div>
+      <div class="relative z-10 max-w-6xl mx-auto px-4 text-center">
+        <p class="text-brand-gold-light font-semibold text-sm md:text-base uppercase tracking-widest mb-4">{totalEquipos} equipos disponibles</p>
+        <h1 class="text-3xl md:text-5xl font-black mb-4 tracking-tight">Catálogo de Equipos</h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+          Alquiler profesional de maquinaria y equipos para obras en toda la provincia de Tucumán.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/Catalogo-Tucuman-Andamios.pdf"
+            download
+            class="inline-flex items-center justify-center gap-2 bg-brand-gold hover:bg-brand-gold-light text-slate-900 font-bold px-6 py-3 rounded-xl transition-colors"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" /></svg>
+            Descargar catálogo en PDF
+          </a>
+          <a
+            href={`${whatsappBase}?text=${encodeURIComponent('Hola José! Necesito un presupuesto para alquiler de equipos.')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-white/60 text-white font-bold px-6 py-3 rounded-xl transition-colors"
+          >
+            Pedir presupuesto
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick category nav -->
+    <section class="sticky top-[60px] bg-white/95 backdrop-blur-sm border-b border-gray-200 z-40">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex gap-2 md:gap-4 overflow-x-auto gallery-scroll">
+        {categorias.map((cat) => (
+          <a
+            href={`#${cat.slug}`}
+            class="flex-shrink-0 text-xs md:text-sm font-semibold text-slate-700 hover:text-brand-blue bg-slate-100 hover:bg-blue-50 rounded-full px-4 py-2 transition-colors whitespace-nowrap"
+          >
+            {cat.name}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Categories -->
+    {categorias.map((cat, catIdx) => (
+      <section id={cat.slug} class={`py-12 md:py-16 scroll-mt-32 ${catIdx % 2 === 0 ? '' : 'bg-slate-50'}`}>
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="mb-10">
+            <p class="text-brand-gold font-semibold text-sm uppercase tracking-widest mb-2">{String(catIdx + 1).padStart(2, '0')} · Categoría</p>
+            <h2 class="text-2xl md:text-4xl font-bold mb-3 tracking-tight">{cat.name}</h2>
+            <div class="w-16 h-1 bg-brand-gold mb-4"></div>
+            <p class="text-gray-600 max-w-2xl leading-relaxed">{cat.intro}</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {cat.equipos.map((eq) => (
+              <div class="fade-in bg-white rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col overflow-hidden group border border-gray-100">
+                <div class="relative h-56 overflow-hidden bg-slate-50">
+                  <img
+                    src={eq.img}
+                    alt={eq.alt}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                  <h3 class="text-lg font-bold mb-2 tracking-tight">{eq.nombre}</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-1">{eq.desc}</p>
+                  <a
+                    href={`${whatsappBase}?text=${encodeURIComponent(`Hola José! Me interesa consultar por el alquiler de ${eq.nombre}. La obra está en [zona] y necesitaría arrancar [fecha aproximada].`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm font-bold px-4 py-2.5 rounded-lg transition-colors"
+                  >
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Consultar por WhatsApp
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <!-- Bottom CTA -->
+    <section class="py-16 bg-slate-900 text-white">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-2xl md:text-4xl font-bold mb-4 tracking-tight">¿Necesitás un equipo que no ves?</h2>
+        <p class="text-gray-400 mb-8">Consultanos, probablemente lo tenemos. José responde directamente por WhatsApp.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={`${whatsappBase}?text=${encodeURIComponent('Hola José! Necesito un equipo que no vi en el catálogo, ¿lo tenés?')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-8 py-4 rounded-xl transition-colors"
+          >
+            Consultá por WhatsApp
+          </a>
+          <a
+            href="/Catalogo-Tucuman-Andamios.pdf"
+            download
+            class="inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-white/60 text-white font-bold px-8 py-4 rounded-xl transition-colors"
+          >
+            Descargar catálogo PDF
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-gray-500 text-sm py-8">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-4">
+      <img src="/favicon.png" alt="Tucumán Andamios y Equipos" class="h-12 w-auto" />
+      <div class="text-center">
+        <p>&copy; {new Date().getFullYear()} Tucumán Andamios y Equipos. Todos los derechos reservados.</p>
+        <p class="mt-1">Guyanas 401, Yerba Buena, Tucumán</p>
+        <p class="mt-1">Tel: {phone}</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a
+    href={`${whatsappBase}?text=${encodeURIComponent('Hola José!')}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="fixed bottom-8 right-6 md:right-8 bg-green-500 hover:bg-green-600 text-white p-4 md:px-5 md:py-3 rounded-full shadow-lg hover:shadow-xl transition-all z-50 flex items-center gap-2"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg class="w-7 h-7 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="hidden md:inline font-semibold text-sm">WhatsApp</span>
+  </a>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggle?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+    menu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => menu?.classList.add('hidden'));
+    });
+  </script>
+</Layout>

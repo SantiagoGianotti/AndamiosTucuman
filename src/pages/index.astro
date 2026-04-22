@@ -132,8 +132,8 @@ const zonas = ['San Miguel de Tucumán', 'Yerba Buena', 'Banda del Río Salí', 
       <div class="hidden md:flex gap-6 text-sm font-medium">
         <a href="#inicio" class="hover:text-brand-blue transition-colors">Inicio</a>
         <a href="#servicios" class="hover:text-brand-blue transition-colors">Servicios</a>
+        <a href="/catalogo" class="hover:text-brand-blue transition-colors">Catálogo</a>
         <a href="#trabajos" class="hover:text-brand-blue transition-colors">Trabajos</a>
-        <a href="#maquinaria" class="hover:text-brand-blue transition-colors">Maquinaria</a>
         <a href="#faq" class="hover:text-brand-blue transition-colors">Preguntas</a>
         <a href="#contacto" class="hover:text-brand-blue transition-colors">Contacto</a>
       </div>
@@ -164,8 +164,8 @@ const zonas = ['San Miguel de Tucumán', 'Yerba Buena', 'Banda del Río Salí', 
       <div class="flex flex-col px-4 py-2">
         <a href="#inicio" class="py-3 border-b border-gray-100 font-medium hover:text-brand-blue transition-colors mobile-link">Inicio</a>
         <a href="#servicios" class="py-3 border-b border-gray-100 font-medium hover:text-brand-blue transition-colors mobile-link">Servicios</a>
+        <a href="/catalogo" class="py-3 border-b border-gray-100 font-medium hover:text-brand-blue transition-colors mobile-link">Catálogo</a>
         <a href="#trabajos" class="py-3 border-b border-gray-100 font-medium hover:text-brand-blue transition-colors mobile-link">Trabajos</a>
-        <a href="#maquinaria" class="py-3 border-b border-gray-100 font-medium hover:text-brand-blue transition-colors mobile-link">Maquinaria</a>
         <a href="#faq" class="py-3 border-b border-gray-100 font-medium hover:text-brand-blue transition-colors mobile-link">Preguntas</a>
         <a href="#contacto" class="py-3 border-b border-gray-100 font-medium hover:text-brand-blue transition-colors mobile-link">Contacto</a>
         <a
@@ -346,15 +346,23 @@ const zonas = ['San Miguel de Tucumán', 'Yerba Buena', 'Banda del Río Salí', 
                 </div>
               ))}
             </div>
-            <a
-              href={`${whatsappBase}?text=${encodeURIComponent('Hola José! Necesito presupuesto para alquiler de maquinaria. Necesito [tipo de equipo] para una obra en [zona].')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 mt-8 text-brand-blue hover:text-brand-blue-light font-semibold transition-colors"
-            >
-              ¿Necesitás algo que no ves? Consultanos
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
-            </a>
+            <div class="flex flex-col sm:flex-row gap-3 mt-8">
+              <a
+                href="/catalogo"
+                class="inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-blue-light text-white font-semibold px-5 py-3 rounded-lg transition-colors"
+              >
+                Ver catálogo completo
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+              </a>
+              <a
+                href="/Catalogo-Tucuman-Andamios.pdf"
+                download
+                class="inline-flex items-center justify-center gap-2 border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-semibold px-5 py-3 rounded-lg transition-colors"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" /></svg>
+                Descargar PDF
+              </a>
+            </div>
           </div>
         </div>
       </div>
